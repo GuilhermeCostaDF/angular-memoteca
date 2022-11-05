@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriarPensamentoComponent implements OnInit {
 
+  pensamento = {
+    id: '1',
+    conteudo: 'Aprendendo Angular',
+    autoria: 'Dev. Costa',
+    modelo: 'modelo1'
+  }
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  criarPensamento(): void{
+    alert('Pensamento criado com sucesso!')
+  }
+
+  cancelarPensamento(): void{
+    alert('Pensamento cancelado com sucesso!')
+  }
 }
