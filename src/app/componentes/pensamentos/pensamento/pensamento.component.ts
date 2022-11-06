@@ -22,7 +22,6 @@ export class PensamentoComponent implements OnInit {
     if(this.pensamento.conteudo.length >= 256){
       return 'pensamento-g'
     }
-
     return 'pensamento-p'
   }
 }
