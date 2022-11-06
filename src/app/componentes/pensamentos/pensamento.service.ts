@@ -13,11 +13,21 @@ export class PensamentoService {
   constructor(private http: HttpClient) { }
 
   public listar(): Observable<Pensamento[]> {
-    return this.http.get<Pensamento[]>(this.API)
+    return this.http.get<Pensamento[]>(this.API);
   }
 
   public criar(pensamento: Pensamento): Observable<Pensamento>{
     return this.http.post<Pensamento>(this.API, pensamento);
+  }
+
+  public excluir(id: number): Observable<Pensamento>{
+    const url = `${this.API}/${id}`;
+    return this.http.delete<Pensamento>(url);
+  }
+
+  public buscarPorId(id: number): Observable<Pensamento>{
+    const url = `${this.API}/${id}`;
+    return this.http.get<Pensamento>(url);
   }
 
 }
